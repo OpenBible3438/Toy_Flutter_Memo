@@ -19,8 +19,14 @@ class MyApp extends StatelessWidget {
       // 괄호 안에 이미지의 경로 넣어주기
       // assets 폴더를 만들어서 그 안에 이미지를 넣으면 됨.
       // 이미지는 pubspac.yaml 등록 해야 됨
-      home:Image.asset('testImage.jpg')
+      //home:Image.asset('testImage.jpg')
 
+      // 박스
+      //home:Container()
+      //home:Container(width:50, height: 50, color:Colors.blue) // 그냥 숫자 넣으면 단위는 lp
+      home:Center(
+        child: Container(width:50, height: 50, color:Colors.blue)
+      )
     );
   }
 }
