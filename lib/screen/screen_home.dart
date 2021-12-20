@@ -47,6 +47,35 @@ class _HomeScreenState extends State<HomeScreen> {
               Padding(
                 padding: EdgeInsets.all(width * 0.048),
               ),
+              
+              // _buildStep(설명문) 함수 추가
+              _buildStep(width, '1. 첫 번째 설명 TEST'),
+              _buildStep(width, '2. 두 번째 설명 TEST'),
+              Padding(
+                  padding: EdgeInsets.all(width * 0.048),
+              ),
+
+              // 퀴즈 풀기 버튼 추가
+              Container(
+                padding: EdgeInsets.only(bottom: width * 0.036),
+                child: Center(
+                  child: ButtonTheme(
+                    minWidth: width * 0.8,
+                    height: height * 0.05,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: RaisedButton(
+                      child: Text(
+                        '지금 퀴즈 풀기',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      color: Colors.deepPurple,
+                      onPressed: (){},
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
@@ -57,7 +86,25 @@ class _HomeScreenState extends State<HomeScreen> {
   // 하단 안내 사항 출력 함수
   Widget _buildStep(double width, String title) {
     return Container(
-      
+      padding: EdgeInsets.fromLTRB(
+          width * 0.048,
+          width * 0.024,
+          width * 0.048,
+          width * 0.024
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Icon(
+            Icons.check_box,
+            size: width * 0.04,
+          ),
+          Padding(
+            padding: EdgeInsets.only(right: width * 0.024),
+          ),
+          Text(title),
+        ],
+      ),
     );
   }
 }
